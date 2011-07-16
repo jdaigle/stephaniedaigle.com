@@ -1,0 +1,88 @@
+body {
+	background-color: #1f1c0e;
+	margin: 0px;
+}
+
+/* Standard Layout and Backgrounds */
+.page {
+	background-image: url('bg.jpg');
+	border-bottom: 1px solid white;
+}
+.page.inside { background-image: url('bg-inside.jpg'); }
+
+.page .header {
+	background-image: url('header.jpg');
+	background-repeat: no-repeat;
+	width: 980px;
+	height: 349px;
+	margin: 0px auto;
+}
+.page.inside .header { background-image: url('header-inside.jpg'); height: 203px; }
+.page .content {
+	background-image: url('content-bg.png');
+	background-repeat: no-repeat;
+	width: 980px;
+	margin: 0px auto;
+	padding-top: 30px;
+	padding-bottom: 50px;
+}
+
+.page.inside .content { background-image: url('content-bg-inside.png'); }
+
+/* Nav Links on Home Page */
+.page.home .nav-links li {
+	list-style: none;
+	display: inline-block;
+}
+
+/* Nav Links on Inside Pages */
+.page.inside .header ul.nav-links {
+    font-family: Tahoma;
+    font-size: 16px;
+    padding-top: 90px;
+    padding-left: 5px;
+    margin: 0px;
+}
+        
+.page.inside .header .nav-links li {
+    list-style: none;
+    display: inline-block;
+    margin-right: 15px;
+}
+        
+.page.inside .header .nav-links li a {
+    color: White;
+    text-decoration: none;
+    display: block;
+    width: 120px;
+    height: 61px;
+    text-align: center;
+    padding-top: 44px;
+}
+        
+.page.inside .header .nav-links li a:hover, .page .header .nav-links li a.current:hover {
+    color: White;
+    background-color: #628f3e;
+}
+        
+.page.inside .header .nav-links li a.current {
+    background-color: #e4f0b7;
+    color: #3c2e14;
+}
+
+/* Footer Styling */
+.foot {
+	background-image: url('footer.png');
+	background-repeat: no-repeat;
+	width: 980px;
+	margin: 0px auto;
+	color: white;
+	padding: 60px 0px 20px 0px;
+	overflow: visible;
+	margin-top: -22px;
+}
+
+.foot p {
+	margin-top: 0px;
+	margin-bottom: 0px;
+}

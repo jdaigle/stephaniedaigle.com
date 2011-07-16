@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>Stephanie Daigle - Crafts</title>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/reset/reset-min.css" />
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/base/base-min.css" />
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.9.0/build/fonts/fonts-min.css" />
+    <link rel="stylesheet" type="text/css" href="common.css" />
+    <link rel="stylesheet" type="text/css" href="gallery.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js" type="text/javascript"></script>
+    <script src="jquery.galleriffic.js" type="text/javascript"></script>
+    <script src="jquery.opacityrollover.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function () {
+            var onMouseOutOpacity = 0.67;
+            $('#thumbs ul.thumbs li').opacityrollover({
+                mouseOutOpacity: onMouseOutOpacity,
+                mouseOverOpacity: 1.0,
+                fadeSpeed: 'fast',
+                exemptionSelector: '.selected'
+            });
+            var gallery = $('#thumbs').galleriffic({
+                delay: 2500,
+                numThumbs: 15,
+                preloadAhead: 10,
+                enableTopPager: true,
+                enableBottomPager: false,
+                maxPagesToShow: 7,
+                imageContainerSel: '#slideshow',
+                controlsContainerSel: '#controls',
+                captionContainerSel: '#caption',
+                loadingContainerSel: '#loading',
+                renderSSControls: false,
+                renderNavControls: false,
+                enableHistory: false,
+                autoStart: false,
+                syncTransitions: true,
+                defaultTransitionDuration: 900,
+                onSlideChange: function (prevIndex, nextIndex) {
+                    // 'this' refers to the gallery, which is an extension of $('#thumbs')
+                    this.find('ul.thumbs').children()
+							.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+							.eq(nextIndex).fadeTo('fast', 1.0);
+                },
+                onPageTransitionOut: function (callback) {
+                    this.fadeTo('fast', 0.0, callback);
+                },
+                onPageTransitionIn: function () {
+                    this.fadeTo('fast', 1.0);
+                }
+            });
+        });
+    </script>
+    <meta http-equiv="X-UA-Compatible" content="IE=9" />
+</head>
+<body>
+    <div class="page inside">
+        <div class="header">
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="crafts.html" class="current">Crafts</a></li>
+                <li><a href="design.html">Design</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div id="gallery" class="gallery-content"> 
+                <div id="controls" class="controls"></div> 
+                <div class="slideshow-container"> 
+                    <div id="loading" class="loader"></div> 
+                    <div id="slideshow" class="slideshow"></div> 
+                </div>
+                <div id="caption" class="caption-container"></div> 
+            </div>
+            <div id="thumbs" class="navigation">
+                <ul class="thumbs noscript">
+                    <li>
+                        <a class="thumb" href="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015.jpg" title="Title #0">
+                            <img src="http://farm4.static.flickr.com/3261/2538183196_8baf9a8015_s.jpg" alt="Title #0" />
+                        </a>
+                        <div class="caption">
+                            <div class="image-title">Title #0</div>
+                            <div class="image-desc">Description</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="thumb" href="http://farm4.static.flickr.com/2404/2538171134_2f77bc00d9.jpg" title="Title #0">
+                            <img src="http://farm3.static.flickr.com/2404/2538171134_2f77bc00d9_s.jpg" alt="Title #0" />
+                        </a>
+                        <div class="caption">
+                            <div class="image-title">Title #0</div>
+                            <div class="image-desc">Description</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="thumb" href="http://farm3.static.flickr.com/2093/2538168854_f75e408156.jpg" title="Title #0">
+                            <img src="http://farm3.static.flickr.com/2093/2538168854_f75e408156_s.jpg" alt="Title #0" />
+                        </a>
+                        <div class="caption">
+                            <div class="image-title">Title #0</div>
+                            <div class="image-desc">Description</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a class="thumb" href="http://farm4.static.flickr.com/3153/2538167690_c812461b7b.jpg" title="Title #0">
+                            <img src="http://farm4.static.flickr.com/3153/2538167690_c812461b7b_s.jpg" alt="Title #0" />
+                        </a>
+                        <div class="caption">
+                            <div class="image-title">Title #0</div>
+                            <div class="image-desc">Description</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="foot">
+        © 2011 Stephanie Daigle
+    </div>
+</body>
+</html>
